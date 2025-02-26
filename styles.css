@@ -1,0 +1,370 @@
+:root {
+    --bg-color: #040210;
+    --text-color: #FFFFFF;
+    --hover-color: #727272;
+    --section-spacing: 50px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    height: 4260px;
+}
+
+.section {
+    height: 100vh;
+    width: 100%;
+    padding: 2rem 4rem;
+    position: relative;
+    margin-bottom: var(--section-spacing);
+}
+
+/* Navigation points */
+.navigation-dots {
+    position: fixed;
+    right: 2rem;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 100;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.dot.active {
+    background-color: var(--text-color);
+}
+
+/* Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.logo-link {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    text-decoration: none; /* Enlève le soulignement du lien */
+    color: inherit; /* Garde la couleur d'origine */
+}
+
+.logo-link:hover {
+    opacity: 0.9; /* Léger effet au survol */
+}
+
+.logo, .defer {
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.defer {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.language-selector {
+    font-size: 0.8rem;
+    position: relative;
+    margin-left: 1rem;
+    cursor: pointer;
+    font-weight: 300;
+}
+
+.language-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: var(--bg-color);
+    padding: 0.5rem;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+.language-selector:hover .language-menu {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.nav-links {
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-links a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: 300;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: var(--hover-color);
+}
+
+/* Hero Section */
+.hero {
+    margin-top: 15vh;
+    padding: 0 2rem;
+}
+
+.hero h1 {
+    font-family: 'Source Serif 4', serif;
+    font-size: 40px;
+    margin-bottom: 2rem;
+    font-weight: 300;
+}
+
+.hero p {
+    font-family: 'Source Serif 4', serif;
+    font-weight: 300;
+    font-size: 60px;
+    line-height: 1.4;
+    max-width: 80%;
+}
+
+.hero p strong {
+    font-weight: 700;
+}
+
+/* Case Studies */
+.case-study-container {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.case-study-content {
+    position: absolute;
+    width: 40%;
+    z-index: 2;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.case-study-content p {
+    font-family: 'Roboto', sans-serif;
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 0.5rem;
+}
+
+.case-study-content h2 {
+    font-family: 'Source Serif 4', serif;
+    font-size: 60px;
+    margin-bottom: 1.5rem;
+    font-weight: 300;
+}
+
+.read-more {
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: 0.9rem;
+    border-bottom: 1px solid var(--text-color);
+    padding-bottom: 2px;
+}
+
+.case-study-image {
+    position: absolute;
+    width: 50%;
+    height: 60vh;
+    object-fit: contain;
+    background-color: #040210;
+}
+
+/* Positioning for left/right layouts */
+.case-study-left .case-study-content {
+    left: 4rem;
+}
+
+.case-study-right .case-study-content {
+    right: 2rem;
+    padding-left: 2rem;
+}
+
+.case-study-left .case-study-image {
+    right: 4rem;
+}
+
+.case-study-right .case-study-image {
+    left: 4rem;
+}
+
+/* Contact Section */
+.contact {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.contact h2 {
+    font-family: 'Source Serif 4', serif;
+    font-size: 60px;
+    margin-bottom: 2rem;
+    font-weight: 300;
+}
+
+.contact a {
+    font-family: 'Roboto', sans-serif;
+    font-size: 40px;
+    font-weight: 100;
+    color: var(--text-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.contact a:hover {
+    color: var(--hover-color);
+}
+
+/* Back to Top Button */
+.back-to-top {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    background-color: transparent;
+    color: var(--text-color);
+    border: 1px solid var(--text-color);
+    padding: 0.5rem 1rem;
+    font-size: 0.8rem;
+    cursor: pointer;
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+.back-to-top.visible {
+    opacity: 1;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .section {
+        padding: 1rem;
+        height: auto; /* Permettre à la section de s'adapter à la hauteur du contenu */
+    }
+
+    .hero h1 {
+        font-size: 32px;
+    }
+
+    .hero p {
+        font-size: 40px;
+        max-width: 100%;
+    }
+
+    .case-study-container {
+        flex-direction: column;
+        height: auto; /* Permettre au conteneur de s'adapter à la hauteur du contenu */
+        position: static; /* Changer de position absolue à statique */
+        padding-bottom: 3rem; /* Ajouter de l'espace en bas */
+    }
+
+    .case-study-content {
+        position: static; /* Changer de position absolue à statique */
+        width: 100%;
+        transform: none; /* Supprimer la transformation qui était utilisée pour le centrage vertical */
+        padding: 2rem 0; /* Ajouter de l'espace autour du contenu */
+        order: 2; /* Placer le contenu après l'image */
+    }
+
+    .case-study-image {
+        position: static; /* Changer de position absolue à statique */
+        width: 100%;
+        margin: 0 auto; /* Centrer l'image */
+        order: 1; /* Placer l'image avant le contenu */
+        left: auto !important;
+        right: auto !important;
+    }
+
+    .case-study-content h2 {
+        font-size: 40px;
+    }
+
+    .contact {
+        min-height: 100vh; /* Plutôt que height fixe */
+        height: auto; /* Permettre l'adaptation à la hauteur du contenu */
+        padding-bottom: 4rem; /* Espace suffisant mais pas excessif */
+    }
+
+    .contact h2 {
+        font-size: 40px;
+    }
+
+    .contact a {
+        font-size: 24px;
+    }
+
+    .nav-links {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: var(--bg-color);
+        display: flex;
+        justify-content: space-around;
+        padding: 1rem;
+        z-index: 100;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    .nav-links a {
+        font-size: 16px; /* Taille réduite pour mobile */
+    }
+    
+    /* Ajouter un peu d'espace en bas pour éviter que le contenu soit caché par la nav */
+    body {
+        padding-bottom: 60px;
+        height: auto; /* Remplacer la hauteur fixe par auto */
+        min-height: 100vh; /* Assurer qu'il couvre au moins la hauteur de la fenêtre */
+    }
+
+    #section5 {
+        margin-bottom: 0;
+    }
+
+    @media (max-width: 1024px) and (min-width: 769px) {
+        .case-study-image {
+            width: 45%;
+        }
+        
+        .case-study-content {
+            width: 45%;
+        }
+    }
+}
